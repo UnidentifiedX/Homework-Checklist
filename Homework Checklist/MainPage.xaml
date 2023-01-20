@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Homework_Checklist.MainPage"
+             Title="Homework Checklist"
+             BackgroundColor="#586470">
+
+    <ContentPage.Resources>
+        
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <Label Text="lorem ipsum dolor sit amet" FontFamily="Nunito"/>
+        <Label Text="lorem ipsum dolor sit amet" FontFamily="Rubik"/>
+        <Label Text="lorem ipsum dolor sit amet"/>
+    </StackLayout>
+
+</ContentPage>
