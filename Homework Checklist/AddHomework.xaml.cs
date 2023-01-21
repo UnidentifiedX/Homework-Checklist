@@ -21,5 +21,23 @@ namespace Homework_Checklist
         {
             //Send to server
         }
+
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            var btn = (ToolbarItem)sender;
+
+            switch (btn.ClassId)
+            {
+                case "1":
+                    Application.Current.MainPage = new NavigationPage(new MainPage());
+                    break;
+                case "2":
+                    Application.Current.MainPage = new NavigationPage(new AddHomework());
+                    break;
+                case "3":
+                    Application.Current.MainPage = new LoginPage();
+                    break;
+            }
+        }
     }
 }
