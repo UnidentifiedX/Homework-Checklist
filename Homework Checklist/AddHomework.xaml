@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Homework_Checklist.AddHomework">
+
+    <ContentPage.Content>
+        
+        <StackLayout Margin="10">
+            
+            <StackLayout Spacing="0">
+                <Label Text="Homework Title"/>
+                <Frame BorderColor="DimGray" CornerRadius="5" Padding="5">
+                    <Entry/>
+                </Frame>
+            </StackLayout>
+            
+            <StackLayout Spacing="0">
+                <Label Text="Due Date"/>
+                <Frame BorderColor="DimGray" CornerRadius="5" Padding="5">
+                    <DatePicker/>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Spacing="0">
+                <Label Text="Notes"/>
+                <Frame BorderColor="DimGray" CornerRadius="5" Padding="5">
+                    <Editor HeightRequest="100"/>
+                </Frame>
+            </StackLayout>
+
+            <Button Text="Add Homework" Clicked="Button_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

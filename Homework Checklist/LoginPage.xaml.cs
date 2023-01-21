@@ -33,9 +33,6 @@ namespace Homework_Checklist
                 await Application.Current.SavePropertiesAsync();
             }
 
-            username.Text = "";
-            auth.Text = "";
-
             //Placeholder Authenticator
             if (auth.Text == "kokhongsocute" && username.Text == "Kok")
             {
