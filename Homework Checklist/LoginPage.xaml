@@ -3,13 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Homework_Checklist.LoginPage">
 
-    <StackLayout>
-        <Entry Placeholder="Username"/>
-        <Entry Placeholder="Authentication Token"/>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Remember Me"/>
-            <CheckBox x:Name="rememberMeCheckbox"/>
+        <StackLayout Padding="5" Grid.Row="1" Grid.ColumnSpan="3">
+
+
+
+            <Entry Placeholder="Username" x:Name="username"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Entry Placeholder="Authentication Token" x:Name="auth" IsPassword="True" Grid.Row="0" Grid.Column="0"/>
+                <ImageButton Source="icons\ic_action_download.png" Grid.Row="0" Grid.Column="1" x:Name="isPassword"  Clicked="isPassword_Clicked"/>
+            </Grid>
+            
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Remember Me" VerticalOptions="Center"/>
+                <CheckBox x:Name="rememberMeCheckbox"/>
+                <Button x:Name="Login" Text="LOGIN" Clicked="Login_Clicked"/>
+            </StackLayout>
         </StackLayout>
-    </StackLayout>
+        
+    </Grid>
+
 </ContentPage>

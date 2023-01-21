@@ -10,7 +10,7 @@ namespace Homework_Checklist
         {
             InitializeComponent();
 
-            MainPage = new LoginPage();
+            MainPage = new AddHomework();
         }
 
         protected override void OnStart()
