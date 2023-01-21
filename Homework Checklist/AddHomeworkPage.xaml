@@ -1,7 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Homework_Checklist.AddHomeworkPage">
+             Title="Homework Checklist"
+             x:Class="Homework_Checklist.AddHomework">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Home" Order="Secondary" Priority="0" IconImageSource="icons/ic_action_menu.png" Clicked="ToolbarItem_Clicked" ClassId="1"/>
+        <ToolbarItem Text="Add Homework" Order="Secondary" Priority="0" IconImageSource="icons/ic_action_menu.png" Clicked="ToolbarItem_Clicked" ClassId="2"/>
+        <ToolbarItem Text="Logout" Order="Secondary" Priority="0" IconImageSource="icons/ic_action_menu.png" Clicked="ToolbarItem_Clicked" ClassId="3"/>
+    </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         

@@ -5,9 +5,11 @@
              Title="Homework Checklist"
              BackgroundColor="#586470">
 
-    <ContentPage.Resources>
-        
-    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Home" Order="Secondary" Priority="0" IconImageSource="icons/ic_action_menu.png" Clicked="ToolbarItem_Clicked" ClassId="1"/>
+        <ToolbarItem Text="Add Homework" Order="Secondary" Priority="0" IconImageSource="icons/ic_action_menu.png" Clicked="ToolbarItem_Clicked" ClassId="2"/>
+        <ToolbarItem Text="Logout" Order="Secondary" Priority="0" IconImageSource="icons/ic_action_menu.png" Clicked="ToolbarItem_Clicked" ClassId="3"/>
+    </ContentPage.ToolbarItems>
 
     <StackLayout>
         <Label Text="lorem ipsum dolor sit amet" FontFamily="Nunito"/>

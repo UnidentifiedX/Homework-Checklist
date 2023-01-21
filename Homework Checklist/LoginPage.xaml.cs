@@ -37,7 +37,7 @@ namespace Homework_Checklist
             if (auth.Text == "kokhongsocute" && username.Text == "Kok")
             {
                 Debug.WriteLine("Kok Hong <3");
-                await Navigation.PushModalAsync(new MainPage());
+                Application.Current.MainPage = new NavigationPage(new MainPage());
             }
             else
             {
