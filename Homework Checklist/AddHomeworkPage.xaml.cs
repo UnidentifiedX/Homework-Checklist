@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace Homework_Checklist
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AddHomework : ContentPage
+    public partial class AddHomeworkPage : ContentPage
     {
-        public AddHomework()
+        public AddHomeworkPage()
         {
             InitializeComponent();
         }
