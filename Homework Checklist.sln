@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework Checklist.Android"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework Checklist.iOS", "Homework Checklist.iOS\Homework Checklist.iOS.csproj", "{024AA2FF-0422-4D9C-8105-BCDE6C37328A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework Checklist", "Homework Checklist\Homework Checklist.csproj", "{59F75F48-8BCA-4C2A-BEFF-120CEDE6909B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework Checklist", "Homework Checklist\Homework Checklist.csproj", "{59F75F48-8BCA-4C2A-BEFF-120CEDE6909B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
