@@ -28,8 +28,8 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Entry Placeholder="Authentication Token" x:Name="auth" IsPassword="True" Grid.Row="0" Grid.Column="0"/>
-                <ImageButton Source="icons\ic_action_download.png" Grid.Row="0" Grid.Column="1" x:Name="isPassword"  Clicked="isPassword_Clicked"/>
+                <Entry Placeholder="Password" x:Name="password" IsPassword="True" Grid.Row="0" Grid.Column="0"/>
+                <ImageButton Source="ic_action_download.png" HeightRequest="40" WidthRequest="40" Padding="7" Aspect="AspectFit" Grid.Row="0" Grid.Column="1" x:Name="isPassword"  Clicked="ShowPassword_Clicked"/>
             </Grid>
             
 

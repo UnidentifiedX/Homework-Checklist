@@ -19,7 +19,7 @@ namespace Homework_Checklist
             try
             {
                 username.Text = Application.Current.Properties["Username"].ToString();
-                auth.Text = Application.Current.Properties["Auth"].ToString();
+                password.Text = Application.Current.Properties["Auth"].ToString();
             }
             catch { }
         }
@@ -29,12 +29,12 @@ namespace Homework_Checklist
             if (rememberMeCheckbox.IsChecked)
             {
                 Application.Current.Properties["Username"] = username.Text;
-                Application.Current.Properties["Auth"] = auth.Text;
+                Application.Current.Properties["Auth"] = password.Text;
                 await Application.Current.SavePropertiesAsync();
             }
 
             //Placeholder Authenticator
-            if (auth.Text == "kokhongsocute" && username.Text == "Kok")
+            if (password.Text == "kokhongsocute" && username.Text == "Kok")
             {
                 Debug.WriteLine("Kok Hong <3");
                 Application.Current.MainPage = new NavigationPage(new MainPage());
@@ -46,9 +46,9 @@ namespace Homework_Checklist
         }
 
         //hides/shows auth field
-        private void isPassword_Clicked(object sender, EventArgs e)
+        private void ShowPassword_Clicked(object sender, EventArgs e)
         {
-            auth.IsPassword = !auth.IsPassword;
+            password.IsPassword = !password.IsPassword;
         }
     }
 }

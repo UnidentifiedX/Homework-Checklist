@@ -32,7 +32,7 @@ namespace Homework_Checklist
                     Application.Current.MainPage = new NavigationPage(new MainPage());
                     break;
                 case "2":
-                    Application.Current.MainPage = new NavigationPage(new AddHomework());
+                    Application.Current.MainPage = new NavigationPage(new AddHomeworkPage());
                     break;
                 case "3":
                     Application.Current.MainPage = new LoginPage();
