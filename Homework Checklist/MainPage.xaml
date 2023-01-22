@@ -12,9 +12,9 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout>
-        <Label Text="lorem ipsum dolor sit amet" FontFamily="Nunito"/>
-        <Label Text="lorem ipsum dolor sit amet" FontFamily="Rubik"/>
-        <Label Text="lorem ipsum dolor sit amet"/>
+        <ScrollView x:Name="homeworkScroll">
+            
+        </ScrollView>
     </StackLayout>
 
 </ContentPage>
