@@ -18,6 +18,7 @@ namespace Homework_Checklist
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
 
+    //JSON
     public class NewHomework
     {
         public string Title { get; set; }
@@ -49,7 +50,7 @@ namespace Homework_Checklist
             string jsonString = JsonSerializer.Serialize(newHomework);
 
             //Send to server
-            await CreateFile(jsonString);
+            //await CreateFile(jsonString);
 
             //Get from server
         }
@@ -72,26 +73,26 @@ namespace Homework_Checklist
             }
         }
 
-        public async Task CreateFile(string data, string owner = "OSdoge", string repoName = "Homework-Checklist-Server", string filePath = "data.json", string message = "N/A", string branch = "main")
-        {
-            var token = Xamarin.Forms.Application.Current.Properties["Auth"].ToString();
-            var userAgent = Xamarin.Forms.Application.Current.Properties["Username"].ToString();
+        //public async Task CreateFile(string data, string owner = "OSdoge", string repoName = "Homework-Checklist-Server", string filePath = "data.json", string message = "N/A", string branch = "main")
+        //{
+        //    var token = Xamarin.Forms.Application.Current.Properties["Auth"].ToString();
+        //    var userAgent = Xamarin.Forms.Application.Current.Properties["Username"].ToString();
 
 
-            var tokenAuth = new Credentials(token);
-            var client = new GitHubClient(new ProductHeaderValue(userAgent));
-            string url = $"https://api.github.com/repos/{owner}/{repoName}/contents/{filePath}";
+        //    var tokenAuth = new Credentials(token);
+        //    var client = new GitHubClient(new ProductHeaderValue(userAgent));
+        //    string url = $"https://api.github.com/repos/{owner}/{repoName}/contents/{filePath}";
 
-            //Authentication
-            client.Credentials = tokenAuth;
+        //    //Authentication
+        //    client.Credentials = tokenAuth;
 
-            var httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.Add("User-Agent", userAgent);
+        //    var httpClient = new HttpClient();
+        //    httpClient.DefaultRequestHeaders.Add("User-Agent", userAgent);
 
-            var request = new CreateFileRequest(message, data);
-            var result = (await client.Repository.Content.CreateFile(owner, repoName, filePath, request)).Content;
-            Debug.WriteLine(result);
-        }
+        //    var request = new CreateFileRequest(message, data);
+        //    var result = (await client.Repository.Content.CreateFile(owner, repoName, filePath, request)).Content;
+        //    Debug.WriteLine(result);
+        //}
 
     }
 }

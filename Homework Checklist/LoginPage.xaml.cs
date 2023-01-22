@@ -33,13 +33,10 @@ namespace Homework_Checklist
                     Login(username, password);
                 }
             }
-            catch
-            {
-
-            }
+            catch { }
         }
 
-        private async void Login_Clicked(object sender, EventArgs e)
+        private void Login_Clicked(object sender, EventArgs e)
         {
             var username = usernameEntry.Text;
             var password = passwordEntry.Text;
@@ -66,10 +63,7 @@ namespace Homework_Checklist
                         await SecureStorage.SetAsync("username", username);
                         await SecureStorage.SetAsync("password", password);
                     }
-                    catch
-                    {
-
-                    }
+                    catch{ }
                 }
 
                 Xamarin.Forms.Application.Current.MainPage = new NavigationPage(new MainPage(client));
