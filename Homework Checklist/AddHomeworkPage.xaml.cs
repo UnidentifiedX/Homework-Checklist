@@ -13,6 +13,7 @@ using System.Net.Http;
 
 using System.Text.Json;
 using System.Diagnostics;
+using Xamarin.Essentials;
 
 namespace Homework_Checklist
 {
@@ -68,6 +69,12 @@ namespace Homework_Checklist
                     Xamarin.Forms.Application.Current.MainPage = new NavigationPage(new AddHomeworkPage(_client));
                     break;
                 case "3":
+                    try
+                    {
+                        SecureStorage.RemoveAll();
+                    }
+                    catch { }
+                    
                     Xamarin.Forms.Application.Current.MainPage = new LoginPage();
                     break;
             }
