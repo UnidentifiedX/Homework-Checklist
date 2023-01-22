@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace Homework_Checklist
@@ -33,6 +34,12 @@ namespace Homework_Checklist
                     Xamarin.Forms.Application.Current.MainPage = new NavigationPage(new AddHomeworkPage(_client));
                     break;
                 case "3":
+                    try
+                    {
+                        SecureStorage.RemoveAll();
+                    }
+                    catch { }
+
                     Xamarin.Forms.Application.Current.MainPage = new LoginPage();
                     break;
             }
