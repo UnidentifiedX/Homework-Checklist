@@ -19,7 +19,7 @@
 
 
 
-            <Entry Placeholder="Username" x:Name="username"/>
+            <Entry Placeholder="Username" x:Name="usernameEntry"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="9*"/>
@@ -28,15 +28,15 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Entry Placeholder="Authentication Token" x:Name="auth" IsPassword="True" Grid.Row="0" Grid.Column="0"/>
-                <ImageButton Source="icons\ic_action_download.png" Grid.Row="0" Grid.Column="1" x:Name="isPassword"  Clicked="isPassword_Clicked"/>
+                <Entry Placeholder="Password" IsPassword="True" x:Name="passwordEntry" Grid.Row="0" Grid.Column="0"/>
+                <ImageButton Source="ic_action_visibility_off.png" HeightRequest="40" WidthRequest="40" Padding="7" Aspect="AspectFit" Grid.Row="0" Grid.Column="1" x:Name="isPassword" Clicked="ShowPassword_Clicked"/>
             </Grid>
             
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <Label Text="Remember Me" VerticalOptions="Center"/>
                 <CheckBox x:Name="rememberMeCheckbox"/>
-                <Button x:Name="Login" Text="LOGIN" Clicked="Login_Clicked"/>
+                <Button Text="LOGIN" Clicked="Login_Clicked"/>
             </StackLayout>
         </StackLayout>
         

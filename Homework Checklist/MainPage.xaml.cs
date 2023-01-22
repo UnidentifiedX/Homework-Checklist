@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Octokit;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -10,9 +11,13 @@ namespace Homework_Checklist
 {
     public partial class MainPage : ContentPage
     {
-        public MainPage()
+        private GitHubClient _client;
+
+        public MainPage(GitHubClient client)
         {
             InitializeComponent();
+
+            _client = client;
         }
 
         private void ToolbarItem_Clicked(object sender, EventArgs e)
@@ -22,13 +27,13 @@ namespace Homework_Checklist
             switch (btn.ClassId)
             {
                 case "1":
-                    Application.Current.MainPage = new NavigationPage(new MainPage());
+                    Xamarin.Forms.Application.Current.MainPage = new NavigationPage(new MainPage(_client));
                     break;
                 case "2":
-                    Application.Current.MainPage = new NavigationPage(new AddHomeworkPage());
+                    Xamarin.Forms.Application.Current.MainPage = new NavigationPage(new AddHomeworkPage(_client));
                     break;
                 case "3":
-                    Application.Current.MainPage = new LoginPage();
+                    Xamarin.Forms.Application.Current.MainPage = new LoginPage();
                     break;
             }
         }
