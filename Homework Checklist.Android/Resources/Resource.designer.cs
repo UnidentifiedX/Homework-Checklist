@@ -16532,13 +16532,13 @@ namespace Homework_Checklist.Droid
 			public const int design_snackbar_background = 2131165283;
 			
 			// aapt resource value: 0x7F070064
-			public const int ic_action_download = 2131165284;
+			public const int ic_action_menu = 2131165284;
 			
 			// aapt resource value: 0x7F070065
-			public const int ic_action_menu = 2131165285;
+			public const int ic_action_visibility_off = 2131165285;
 			
 			// aapt resource value: 0x7F070066
-			public const int ic_action_visibility_off = 2131165286;
+			public const int ic_action_visibility_on = 2131165286;
 			
 			// aapt resource value: 0x7F070067
 			public const int ic_arrow_down_24dp = 2131165287;
