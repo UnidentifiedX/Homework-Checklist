@@ -34,15 +34,7 @@ namespace Homework_Checklist
             }
 
             //Placeholder Authenticator
-            if (auth.Text == "kokhongsocute" && username.Text == "Kok")
-            {
-                Debug.WriteLine("Kok Hong <3");
                 Application.Current.MainPage = new NavigationPage(new MainPage());
-            }
-            else
-            {
-                await DisplayAlert("Login Failed", "User: Kok\nAuth: kokhongsocute", "OK");
-            }
         }
 
         //hides/shows auth field

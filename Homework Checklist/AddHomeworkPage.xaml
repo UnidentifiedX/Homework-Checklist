@@ -17,21 +17,21 @@
             <StackLayout Spacing="0">
                 <Label Text="Homework Title"/>
                 <Frame BorderColor="DimGray" CornerRadius="5" Padding="5">
-                    <Entry/>
+                    <Entry x:Name="title"/>
                 </Frame>
             </StackLayout>
             
             <StackLayout Spacing="0">
                 <Label Text="Due Date"/>
                 <Frame BorderColor="DimGray" CornerRadius="5" Padding="5">
-                    <DatePicker/>
+                    <DatePicker x:Name="date"/>
                 </Frame>
             </StackLayout>
 
             <StackLayout Spacing="0">
-                <Label Text="Notes"/>
+                <Label Text="Description"/>
                 <Frame BorderColor="DimGray" CornerRadius="5" Padding="5">
-                    <Editor HeightRequest="100"/>
+                    <Editor HeightRequest="100" x:Name="description"/>
                 </Frame>
             </StackLayout>
 
