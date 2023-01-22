@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 using Octokit;
 using System.Net.Http;
@@ -14,18 +13,10 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Diagnostics;
 using Xamarin.Essentials;
+using Homework_Checklist.Models;
 
 namespace Homework_Checklist
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-
-    //JSON
-    public class NewHomework
-    {
-        public string Title { get; set; }
-        public DateTime Date { get; set; }
-        public string Description { get; set; }
-    }
 
     public partial class AddHomeworkPage : ContentPage
     {
@@ -38,17 +29,19 @@ namespace Homework_Checklist
             _client = client;
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void AddHomeworkButton_Clicked(object sender, EventArgs e)
         {
             //Create Json data file
-            var newHomework = new NewHomework
+            var homework = new Homework
             {
                 Title = title.Text,
                 Date = date.Date,
                 Description = description.Text
             };
 
-            string jsonString = JsonSerializer.Serialize(newHomework);
+            await UpdateHomework(homework);
+
+            //string jsonString = JsonSerializer.Serialize(homework);
 
             //Send to server
             //await CreateFile(jsonString);
@@ -79,6 +72,20 @@ namespace Homework_Checklist
                     break;
             }
         }
+        
+        public async Task UpdateHomework(Homework homework)
+        {
+            var currentHomework = (await _client.Repository.Content.GetAllContents("OSdoge", "Homework-Checklist-Server", "work.json")).First().Content;
+            var homeworkList = JsonSerializer.Deserialize<List<Homework>>(currentHomework);
+
+            homeworkList.Add(homework);
+
+            var homeworkString = JsonSerializer.Serialize(homeworkList);
+
+            var updateRequest = new UpdateFileRequest($"Added homework for {DateTime.Now:dd/MM/yyyy}", homeworkString, currentHomework);
+
+            await _client.Repository.Content.CreateFile("OSdoge", "Homework-Checklist-Server", "work.json", updateRequest);
+        }
 
         //public async Task CreateFile(string data, string owner = "OSdoge", string repoName = "Homework-Checklist-Server", string filePath = "data.json", string message = "N/A", string branch = "main")
         //{
@@ -100,6 +107,6 @@ namespace Homework_Checklist
         //    var result = (await client.Repository.Content.CreateFile(owner, repoName, filePath, request)).Content;
         //    Debug.WriteLine(result);
         //}
-
+        
     }
 }
