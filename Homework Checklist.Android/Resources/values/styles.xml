@@ -16,5 +16,6 @@
     <!--<item name="colorAccent">#FF4081</item>-->
 
     <item name="android:statusBarColor">#708090</item>
+	<item name="colorAccent">#adbbc9</item>
   </style>
 </resources>

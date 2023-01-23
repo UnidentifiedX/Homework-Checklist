@@ -1,4 +1,7 @@
 ﻿using Octokit;
+using Rg.Plugins.Popup.Extensions;
+using Rg.Plugins.Popup.Pages;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -36,16 +39,20 @@ namespace Homework_Checklist
             catch { }
         }
 
-        private void Login_Clicked(object sender, EventArgs e)
+        private async void Login_Clicked(object sender, EventArgs e)
         {
             var username = usernameEntry.Text;
             var password = passwordEntry.Text;
-            
+
             Login(username, password);
         }
 
         private async void Login(string username, string password)
         {
+            //Loading Popup Page
+            var loadingPage = new LoadingPopupPage();
+            await Navigation.PushPopupAsync(loadingPage);
+
             var client = new GitHubClient(new ProductHeaderValue(username));
             var basicAuth = new Credentials(username, password);
 
@@ -66,10 +73,13 @@ namespace Homework_Checklist
                     catch{ }
                 }
 
+                await Navigation.RemovePopupPageAsync(loadingPage);
+
                 Xamarin.Forms.Application.Current.MainPage = new NavigationPage(new MainPage(client));
             }
             catch (Exception ex)
             {
+                await Navigation.RemovePopupPageAsync(loadingPage);
                 await DisplayAlert("Login Failed", "The username or password is incorrect.", "OK");
             }
         }
