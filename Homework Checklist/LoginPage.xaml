@@ -17,8 +17,6 @@
 
         <StackLayout Padding="5" Grid.Row="1" Grid.ColumnSpan="3">
 
-
-
             <Entry Placeholder="Username" x:Name="usernameEntry"/>
             <Grid>
                 <Grid.ColumnDefinitions>
