@@ -15,9 +15,15 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackLayout Padding="5" Grid.Row="1" Grid.ColumnSpan="3">
+        <StackLayout Padding="25" Grid.Row="1" Grid.ColumnSpan="3">
 
-            <Entry Placeholder="Username" x:Name="usernameEntry"/>
+            <StackLayout Margin="0, 0, 0, 10">
+                <Label Text="Login" FontAttributes="Bold" FontSize="Large" FontFamily="Nunito" TextColor="#586470"/>
+                <Label Text="Please sign in to continue" FontFamily="Nunito" TextColor="#586470"/>
+            </StackLayout>
+
+
+            <Entry Placeholder="Username" x:Name="usernameEntry" PlaceholderColor="#adbbc9"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="9*"/>
@@ -26,15 +32,17 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Entry Placeholder="Password" IsPassword="True" x:Name="passwordEntry" Grid.Row="0" Grid.Column="0"/>
-                <ImageButton Source="ic_action_visibility_off.png" HeightRequest="40" WidthRequest="40" Padding="7" Aspect="AspectFit" Grid.Row="0" Grid.Column="1" x:Name="isPassword" Clicked="ShowPassword_Clicked"/>
-            </Grid>
-            
 
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Label Text="Remember Me" VerticalOptions="Center"/>
-                <CheckBox x:Name="rememberMeCheckbox"/>
-                <Button Text="LOGIN" Clicked="Login_Clicked"/>
+                <Entry Placeholder="Password" IsPassword="True" x:Name="passwordEntry" Grid.Row="0" Grid.Column="0" PlaceholderColor="#adbbc9"/>
+                <ImageButton Source="ic_action_visibility_off.png" HeightRequest="40" WidthRequest="40" Padding="5" Aspect="AspectFit" Grid.Row="0" Grid.Column="1" x:Name="isPassword" Clicked="ShowPassword_Clicked" BackgroundColor="Transparent"/>
+            </Grid>
+
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="0">
+                <Label Text="Remember Me" VerticalOptions="Center" Padding="0" Margin="0"/>
+                <CheckBox x:Name="rememberMeCheckbox" Color="#adbbc9"/>
+                <Button Text="LOGIN" Clicked="Login_Clicked" HeightRequest="40" Margin="10, 0, 0, 0">
+                </Button>
             </StackLayout>
         </StackLayout>
         
