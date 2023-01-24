@@ -5,8 +5,33 @@
     <Application.Resources>
         <ResourceDictionary>
             <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="#708090"/>
+                <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Dark=#586470, Light=#708090}"/>
             </Style>
+
+            <Color x:Key="HeaderColor">#708090</Color>
+            <Color x:Key="HeaderColorDark">#586470</Color>
+
+            <Color x:Key="WindowBackgroundColor">White</Color>
+            <Color x:Key="WindowsBackgroundColorDark">#444444</Color>
+
+            <Color x:Key="Grey1">#adbbc9</Color>
+
+            <Color x:Key="TextColor">#586470</Color>
+
+            <Style x:Key="Text" TargetType="Label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark=White, Light={StaticResource TextColor}}"/>
+            </Style>
+
+            <Style x:Key="Button" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource HeaderColorDark}, Light={StaticResource Grey1}}"/>
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark=White, Light={StaticResource TextColor}}"/>
+            </Style>
+
+            <Style x:Key="Entry" TargetType="Entry">
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark=White, Light={StaticResource TextColor}}"/>
+                <Setter Property="PlaceholderColor" Value="#adbbc9"/>
+            </Style>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

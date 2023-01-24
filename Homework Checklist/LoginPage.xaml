@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Homework_Checklist.LoginPage"
-             BackgroundColor="#586470">
+             BackgroundColor="{AppThemeBinding 
+                                Light={StaticResource WindowBackgroundColor},
+                                Dark={StaticResource WindowsBackgroundColorDark}}">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -19,12 +21,12 @@
         <StackLayout Padding="25" Grid.Row="1" Grid.ColumnSpan="3">
 
             <StackLayout Margin="0, 0, 0, 10">
-                <Label Text="Login" FontAttributes="Bold" FontSize="Large" FontFamily="Nunito" TextColor="#dbedff"/>
-                <Label Text="Please sign in to continue" FontFamily="Nunito" TextColor="#adbbc9"/>
+                <Label Text="Login" FontAttributes="Bold" FontSize="Large" FontFamily="Nunito" Style="{StaticResource Text}"/>
+                <Label Text="Please sign in to continue" FontFamily="Nunito" Style="{StaticResource Text}"/>
             </StackLayout>
 
 
-            <Entry Placeholder="Username" x:Name="usernameEntry" PlaceholderColor="#adbbc9"/>
+            <Entry Placeholder="Username" x:Name="usernameEntry" Style="{StaticResource Entry}"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="9*"/>
@@ -34,15 +36,17 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Entry Placeholder="Password" IsPassword="True" x:Name="passwordEntry" HeightRequest="70" Grid.Row="0" Grid.Column="0" PlaceholderColor="#adbbc9"/>
+
+
+                <Entry Placeholder="Password" IsPassword="True" x:Name="passwordEntry" HeightRequest="70" Grid.Row="0" Grid.Column="0" Style="{StaticResource Entry}/>
                 <ImageButton Source="ic_action_visibility_off.png" HeightRequest="40" WidthRequest="40" Padding="5" Aspect="AspectFit" Grid.Row="0" Grid.Column="1" x:Name="isPassword" Clicked="ShowPassword_Clicked" BackgroundColor="Transparent"/>
             </Grid>
 
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="0">
-                <Label Text="Remember Me" TextColor="#adbbc9" VerticalOptions="Center" Padding="0" Margin="0"/>
+                <Label Text="Remember Me" VerticalOptions="Center" Padding="0" Margin="0" Style="{StaticResource Text}"/>
                 <CheckBox x:Name="rememberMeCheckbox" Color="#adbbc9"/>
-                <Button Text="LOGIN" Clicked="Login_Clicked" HeightRequest="40" Margin="10, 0, 0, 0">
+                <Button Text="LOGIN" Clicked="Login_Clicked" HeightRequest="40" Margin="10, 0, 0, 0" Style="{StaticResource Button}">
                 </Button>
             </StackLayout>
         </StackLayout>
