@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Homework_Checklist.MainPage"
              Title="Homework Checklist"
-             BackgroundColor="#586470">
+             BackgroundColor="{AppThemeBinding 
+                                Light={StaticResource WindowBackgroundColor},
+                                Dark={StaticResource WindowsBackgroundColorDark}}">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Home" Order="Secondary" Priority="0" IconImageSource="icons/ic_action_menu.png" Clicked="ToolbarItem_Clicked" ClassId="1"/>
@@ -13,8 +15,8 @@
 
     <StackLayout>
         <ScrollView x:Name="homeworkScroll">
-            
+
         </ScrollView>
     </StackLayout>
-
 </ContentPage>
+

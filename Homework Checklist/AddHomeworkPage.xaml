@@ -25,7 +25,7 @@
             <StackLayout Spacing="0">
                 <Label Text="Due Date"/>
                 <Frame BorderColor="DimGray" CornerRadius="5" Padding="5">
-                    <DatePicker x:Name="date"/>
+                    <DatePicker x:Name="date" />
                 </Frame>
             </StackLayout>
 

@@ -4,6 +4,14 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using Octokit;
+using System.Runtime.CompilerServices;
+using Xamarin.Forms;
+
+using AndroidX.Core.View;
+using System.Threading.Tasks;
+using Xamarin.Essentials;
+
 
 namespace Homework_Checklist.Droid
 {
