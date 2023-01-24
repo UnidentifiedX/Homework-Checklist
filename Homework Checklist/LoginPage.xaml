@@ -36,7 +36,9 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Entry Placeholder="Password" IsPassword="True" x:Name="passwordEntry" Grid.Row="0" Grid.Column="0" Style="{StaticResource Entry}"/>
+
+
+                <Entry Placeholder="Password" IsPassword="True" x:Name="passwordEntry" HeightRequest="70" Grid.Row="0" Grid.Column="0" Style="{StaticResource Entry}/>
                 <ImageButton Source="ic_action_visibility_off.png" HeightRequest="40" WidthRequest="40" Padding="5" Aspect="AspectFit" Grid.Row="0" Grid.Column="1" x:Name="isPassword" Clicked="ShowPassword_Clicked" BackgroundColor="Transparent"/>
             </Grid>
 
